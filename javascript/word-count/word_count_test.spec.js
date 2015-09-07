@@ -41,4 +41,33 @@ describe('word_count_test.spec', function () {
             andrey: 1
         });
     });
+
+    it('should get a correct count for sentence with repeated words', function () {
+        expect(wordCount('Test max zeckson andrey Test')).toEqual({
+            Test: 2,
+            max: 1,
+            zeckson: 1,
+            andrey: 1
+        });
+    });
+
+    it('should be case sensetive', function () {
+        expect(wordCount('Test max zeckson andrey test')).toEqual({
+            Test: 1,
+            test: 1,
+            max: 1,
+            zeckson: 1,
+            andrey: 1
+        });
+    });
+
+    it('should not count special symbols', function () {
+        expect(wordCount('Test max zeckson andrey test!')).toEqual({
+            Test: 1,
+            test: 1,
+            max: 1,
+            zeckson: 1,
+            andrey: 1
+        });
+    });
 });
