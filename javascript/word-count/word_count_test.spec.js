@@ -112,8 +112,16 @@ describe('word_count_test.spec', function () {
 
     it('should correct count composite word', function () {
         var result = {
-            'Test-max-2': 1,
+            'Test-max-2': 1
         };
         expect(wordCount('Test-max-2')).toEqual(result);
+    });
+
+    it('should work with russian', function () {
+        var result = {
+            'пирожок': 1,
+            'лежит': 1
+        };
+        expect(wordCount('пирожок лежит')).toEqual(result);
     });
 });
