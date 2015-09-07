@@ -5,10 +5,8 @@ module.exports = function wordCount(sentence) {
         throw "Parameter should be a string";
     }
 
-    sentence.split(' ').filter(function (word) {
-        return word && /[A-z]/.test(word);
-    }).forEach(function(word) {
-        word = word.replace(/[^a-z]+/ig, '');
+    sentence.trim().replace(/\s+/ig, ' ').split(' ').forEach(function(word) {
+        word = word.replace(/[^a-z\-]+/ig, '');
         if (!wordsMap[word]) {
             wordsMap[word] = 1;
         } else {
