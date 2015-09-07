@@ -34,13 +34,11 @@ describe('word_count_test.spec', function () {
     });
 
     it('should get a correct count for sentence with two words', function () {
-        expect(wordCount('Test max zeckson ' +
-            'andrey andrey andrey andrey andrey andrey andrey andrey andrey andrey andrey ' +
-            'andrey andrey andrey andrey andrey andrey andrey andrey andrey ')).toEqual({
+        expect(wordCount('Test max zeckson andrey')).toEqual({
             Test: 1,
             max: 1,
             zeckson: 1,
-            andrey: 20
+            andrey: 1
         });
     });
 });
