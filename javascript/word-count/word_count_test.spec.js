@@ -102,4 +102,11 @@ describe('word_count_test.spec', function () {
         };
         expect(wordCount(' Test max   zeckson  \t  andrey      test!      ')).toEqual(result);
     });
+
+    it('should correct count composite word', function () {
+        var result = {
+            'Test-max': 1,
+        };
+        expect(wordCount('Test-max')).toEqual(result);
+    });
 });
