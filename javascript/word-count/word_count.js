@@ -6,7 +6,7 @@ module.exports = function wordCount(sentence) {
     }
 
     sentence.trim().replace(/\s+/ig, ' ').split(' ').forEach(function(word) {
-        word = word.replace(/[^a-z\-]+/ig, '');
+        word = word.replace(/[^a-z\-^0-9]+/ig, '');
         if (!wordsMap[word]) {
             wordsMap[word] = 1;
         } else {
