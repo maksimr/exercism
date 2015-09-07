@@ -91,4 +91,15 @@ describe('word_count_test.spec', function () {
         };
         expect(wordCount(' Test max   zeckson    andrey      test!      ')).toEqual(result);
     });
+
+    it('should ignore whitespaces inside', function () {
+        var result = {
+            Test: 1,
+            test: 1,
+            max: 1,
+            zeckson: 1,
+            andrey: 1
+        };
+        expect(wordCount(' Test max   zeckson  \t  andrey      test!      ')).toEqual(result);
+    });
 });
