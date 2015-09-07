@@ -124,4 +124,15 @@ describe('word_count_test.spec', function () {
         };
         expect(wordCount('пирожок лежит')).toEqual(result);
     });
+
+    it('should work with non-english languages', function () {
+        var result = {
+            'Düsseldorf': 1,
+            'Köln': 1,
+            'Москва': 1,
+            '北京市': 1
+
+        };
+        expect(wordCount('Düsseldorf, Köln Москва 北京市')).toEqual(result);
+    });
 });
