@@ -80,4 +80,15 @@ describe('word_count_test.spec', function () {
             andrey: 1
         });
     });
+
+    it('should ignore leading and trailing spaces', function () {
+        var result = {
+            Test: 1,
+            test: 1,
+            max: 1,
+            zeckson: 1,
+            andrey: 1
+        };
+        expect(wordCount(' Test max   zeckson    andrey      test!      ')).toEqual(result);
+    });
 });
