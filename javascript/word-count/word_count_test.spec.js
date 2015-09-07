@@ -19,4 +19,10 @@ describe('word_count_test.spec', function() {
             return wordCount("jdsldd");
         }).not.toThrow();
     });
+
+    it('should get a correct count for sentence with one word', function () {
+        expect(wordCount('Test')).toEqual({
+            Test: 1
+        });
+    });
 });
