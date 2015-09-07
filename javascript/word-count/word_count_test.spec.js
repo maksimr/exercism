@@ -154,4 +154,19 @@ describe('word_count_test.spec', function () {
         };
         expect(wordCount('Düsseldorf, Köln %$# Мос!ква 北京市')).toEqual(result);
     });
+
+    it('should have awesome perfomance', function () {
+        var start = Date.now();
+        var words = [];
+        for (var i=0; i<50000; i++) {
+            words.push(Math.random().toFixed(10).substr(2));
+        }
+
+        var text = words.join(' ');
+        wordCount(text);
+        var end = Date.now();
+
+        var execTime = end - start;
+        expect(execTime < 60).toBeTruthy();
+    });
 });
