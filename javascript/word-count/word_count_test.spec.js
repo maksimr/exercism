@@ -70,4 +70,14 @@ describe('word_count_test.spec', function () {
             andrey: 1
         });
     });
+
+    it('should work correct with multiple spaces', function () {
+        expect(wordCount('Test max   zeckson    andrey      test!')).toEqual({
+            Test: 1,
+            test: 1,
+            max: 1,
+            zeckson: 1,
+            andrey: 1
+        });
+    });
 });
