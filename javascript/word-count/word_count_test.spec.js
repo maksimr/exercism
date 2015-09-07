@@ -168,6 +168,6 @@ describe('word_count_test.spec', function () {
 
         var execTime = end - start;
         console.info(execTime);
-        expect(execTime < 250).toBeTruthy();
+        expect(execTime < 150).toBeTruthy();
     });
 });
