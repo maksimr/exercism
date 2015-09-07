@@ -1,17 +1,17 @@
 var wordCount = require('./word_count');
 
-describe('word_count_test.spec', function() {
-    it('should export word count function', function() {
+describe('word_count_test.spec', function () {
+    it('should export word count function', function () {
         expect(wordCount).toBeDefined();
     });
 
-    it('should throw if no input parameters passed', function() {
+    it('should throw if no input parameters passed', function () {
         expect(function () {
             return wordCount();
         }).toThrow();
     });
 
-    it('should throw if input parameter is not string', function() {
+    it('should throw if input parameter is not string', function () {
         expect(function () {
             return wordCount(12343);
         }).toThrow();
@@ -30,6 +30,17 @@ describe('word_count_test.spec', function() {
         expect(wordCount('Test max')).toEqual({
             Test: 1,
             max: 1
+        });
+    });
+
+    it('should get a correct count for sentence with two words', function () {
+        expect(wordCount('Test max zeckson ' +
+            'andrey andrey andrey andrey andrey andrey andrey andrey andrey andrey andrey ' +
+            'andrey andrey andrey andrey andrey andrey andrey andrey andrey ')).toEqual({
+            Test: 1,
+            max: 1,
+            zeckson: 1,
+            andrey: 20
         });
     });
 });
