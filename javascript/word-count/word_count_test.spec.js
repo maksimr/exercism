@@ -144,4 +144,14 @@ describe('word_count_test.spec', function () {
         };
         expect(wordCount('Düsseldorf, Köln Мос!ква 北京市')).toEqual(result);
     });
+
+    it('should work with non-english languages', function () {
+        var result = {
+            'Düsseldorf': 1,
+            'Köln': 1,
+            'Москва': 1,
+            '北京市': 1
+        };
+        expect(wordCount('Düsseldorf, Köln %$# Мос!ква 北京市')).toEqual(result);
+    });
 });
