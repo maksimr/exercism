@@ -25,4 +25,11 @@ describe('word_count_test.spec', function() {
             Test: 1
         });
     });
+
+    it('should get a correct count for sentence with two words', function () {
+        expect(wordCount('Test max')).toEqual({
+            Test: 1,
+            max: 1
+        });
+    });
 });
