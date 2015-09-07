@@ -33,7 +33,7 @@ describe('word_count_test.spec', function () {
         });
     });
 
-    it('should get a correct count for sentence with two words', function () {
+    it('should get a correct count for sentence with four words', function () {
         expect(wordCount('Test max zeckson andrey')).toEqual({
             Test: 1,
             max: 1,
